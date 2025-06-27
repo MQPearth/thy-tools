@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/thytools">
+        <file>res/tray.png</file>
+    </qresource>
+</RCC>
