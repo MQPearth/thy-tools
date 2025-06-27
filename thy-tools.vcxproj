@@ -67,6 +67,9 @@
     <ClCompile>
       <AdditionalOptions>/utf-8</AdditionalOptions>
     </ClCompile>
+    <QtUic>
+      <QtUicFileName>ui_%(Filename).h</QtUicFileName>
+    </QtUic>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -106,21 +109,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <QtRcc Include="thytools.qrc" />
-    <QtUic Include="thytools.ui" />
-    <QtMoc Include="thytools.h" />
-    <ClCompile Include="thytools.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\thytools.cpp" />
+    <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="resource.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="thy-tools.rc" />
+    <QtMoc Include="src\thytools.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\logo.ico" />
     <Image Include="res\tray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="res\thytools.ui" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="res\thytools.qrc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="res\thy-tools.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

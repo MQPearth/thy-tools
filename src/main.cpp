@@ -12,7 +12,7 @@ int main(int argc, char* argv[]) {
 	// 创建托盘图标
 	QSystemTrayIcon* trayIcon = new QSystemTrayIcon();
 
-	trayIcon->setIcon(QIcon(":/thytools/res/tray.png"));
+	trayIcon->setIcon(QIcon(":/thytools/tray.png"));
 
 	// 创建托盘菜单
 	QMenu* menu = new QMenu();
