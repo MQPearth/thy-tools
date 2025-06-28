@@ -109,8 +109,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\cron.cpp" />
     <ClCompile Include="src\thytools.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\timer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="src\thytools.h" />
@@ -120,13 +122,19 @@
     <Image Include="res\tray.png" />
   </ItemGroup>
   <ItemGroup>
+    <QtUic Include="res\cron.ui" />
     <QtUic Include="res\thytools.ui" />
+    <QtUic Include="res\timer.ui" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="src\timer.h" />
+    <QtMoc Include="src\cron.h" />
     <ClInclude Include="src\resource.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtRcc Include="res\cron.qrc" />
     <QtRcc Include="res\thytools.qrc" />
+    <QtRcc Include="res\timer.qrc" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="res\thy-tools.rc" />

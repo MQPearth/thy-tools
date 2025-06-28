@@ -1,0 +1,4 @@
+<RCC>
+    <qresource prefix="/timer">
+    </qresource>
+</RCC>
