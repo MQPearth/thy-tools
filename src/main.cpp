@@ -23,12 +23,16 @@ int main(int argc, char* argv[]) {
 
 	QAction* cronAction = new QAction("Cron");
 	QAction* timerAction = new QAction("定时通知");
+	QAction* settingsAction = new QAction("设置");
 	QAction* exitAction = new QAction("退出");
+
 
 	menu->addAction(cronAction);
 	menu->addAction(timerAction);
 	menu->addSeparator();
+	menu->addAction(settingsAction);
 	menu->addAction(exitAction);
+
 
 	trayIcon->setContextMenu(menu);
 
@@ -43,7 +47,7 @@ int main(int argc, char* argv[]) {
 		if (!cron) {
 			cron = std::make_unique<cron_tool>();
 		}
-		cron->show();
+		cron->showWindow();
 		});
 
 	QObject::connect(exitAction, &QAction::triggered, [&]() {
