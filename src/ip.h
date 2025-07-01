@@ -13,16 +13,14 @@ public:
     ~ip_tool();
     void showWindow();
 
-    void runInThread(const QString& crontext);
-
     void query();
 
     void sendRequest(const QString& ip);
 signals:
-    void updateSignal(const QJsonObject value);
+    void updateSignal(const QString code, const QJsonObject value);
 
 public slots:
-    void handleUpdateSignal(const QJsonObject value);
+    void handleUpdateSignal(const QString code, const QJsonObject value);
 
 private:
     Ui::ipClass ui;
