@@ -43,6 +43,12 @@
     <ClCompile Include="src\timer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\ip.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="configmanager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="src\thytools.h">
@@ -54,6 +60,12 @@
     <QtMoc Include="src\timer.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="src\ip.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="configmanager.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="res\thytools.ui">
@@ -63,6 +75,9 @@
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="res\timer.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="res\ip.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>
@@ -82,6 +97,9 @@
       <Filter>Resource Files</Filter>
     </QtRcc>
     <QtRcc Include="res\timer.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+    <QtRcc Include="res\ip.qrc">
       <Filter>Resource Files</Filter>
     </QtRcc>
   </ItemGroup>

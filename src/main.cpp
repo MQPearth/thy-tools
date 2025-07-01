@@ -1,4 +1,4 @@
-﻿#include <QApplication>
+#include <QApplication>
 #include <QSystemTrayIcon>
 #include <QMenu>
 #include <QAction>
@@ -8,9 +8,14 @@
 #include <memory>
 
 #include "cron.h"
+#include "ip.h"
+#include "configmanager.h"
 
 int main(int argc, char* argv[]) {
 	QApplication a(argc, argv);
+
+
+	ConfigManager::initNetworkManager(&a);
 
 	// 创建托盘图标
 	QSystemTrayIcon* trayIcon = new QSystemTrayIcon();
@@ -22,12 +27,14 @@ int main(int argc, char* argv[]) {
 	QMenu* menu = new QMenu();
 
 	QAction* cronAction = new QAction("Cron");
-	QAction* timerAction = new QAction("定时通知");
+	QAction* ipAction = new QAction("IP");
+	QAction* timerAction = new QAction("定时");
 	QAction* settingsAction = new QAction("设置");
 	QAction* exitAction = new QAction("退出");
 
 
 	menu->addAction(cronAction);
+	menu->addAction(ipAction);
 	menu->addAction(timerAction);
 	menu->addSeparator();
 	menu->addAction(settingsAction);
@@ -38,8 +45,19 @@ int main(int argc, char* argv[]) {
 
 	trayIcon->show();
 
-	// 托盘提示信息（可选）
-	trayIcon->showMessage("thy-tools", "程序已最小化到托盘", QSystemTrayIcon::Information, 3000);
+	
+	if (!ConfigManager::loadConfig()) {
+		QMessageBox::information(
+			nullptr,                    
+			"提示",                 
+			"配置文件读写失败, 无法初始化"    
+		);
+	}
+
+	if (ConfigManager::isFirst()) {
+		trayIcon->showMessage("thy-tools", "程序已最小化到托盘", QSystemTrayIcon::Information, 3000);
+	}
+
 
 	std::unique_ptr<cron_tool> cron;
 
@@ -48,6 +66,15 @@ int main(int argc, char* argv[]) {
 			cron = std::make_unique<cron_tool>();
 		}
 		cron->showWindow();
+		});
+
+	std::unique_ptr<ip_tool> ip;
+
+	QObject::connect(ipAction, &QAction::triggered, [&ip]() {
+		if (!ip) {
+			ip = std::make_unique<ip_tool>();
+		}
+		ip->showWindow();
 		});
 
 	QObject::connect(exitAction, &QAction::triggered, [&]() {

@@ -40,7 +40,7 @@ std::string formatTimeFromMilliseconds(long long timestampMillis) {
 	std::tm tm = {};
 	localtime_s(&tm, &t);
 	std::ostringstream oss;
-	oss << std::put_time(&tm, "%Y-%m-%d %H:%M:%S %a");
+	oss << std::put_time(&tm, "%Y-%m-%d %a %H:%M:%S");
 	return oss.str();
 }
 

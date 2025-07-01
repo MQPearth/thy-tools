@@ -109,7 +109,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="configmanager.cpp" />
     <ClCompile Include="src\cron.cpp" />
+    <ClCompile Include="src\ip.cpp" />
     <ClCompile Include="src\thytools.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\timer.cpp" />
@@ -123,17 +125,21 @@
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="res\cron.ui" />
+    <QtUic Include="res\ip.ui" />
     <QtUic Include="res\thytools.ui" />
     <QtUic Include="res\timer.ui" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="src\timer.h" />
     <QtMoc Include="src\cron.h" />
+    <QtMoc Include="configmanager.h" />
     <ClInclude Include="src\croncpp.h" />
+    <QtMoc Include="src\ip.h" />
     <ClInclude Include="src\resource.h" />
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="res\cron.qrc" />
+    <QtRcc Include="res\ip.qrc" />
     <QtRcc Include="res\thytools.qrc" />
     <QtRcc Include="res\timer.qrc" />
   </ItemGroup>
