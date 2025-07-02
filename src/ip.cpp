@@ -120,6 +120,9 @@ void ip_tool::query() {
 
 
 void ip_tool::showWindow() {
+	ui.lineEdit->clear();
+	ui.textEdit->clear();
+	ui.logEdit->clear();
 	this->show();
 	sendRequest("");
 }

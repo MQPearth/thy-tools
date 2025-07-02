@@ -112,6 +112,7 @@
     <ClCompile Include="configmanager.cpp" />
     <ClCompile Include="src\cron.cpp" />
     <ClCompile Include="src\ip.cpp" />
+    <ClCompile Include="src\json.cpp" />
     <ClCompile Include="src\thytools.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\timer.cpp" />
@@ -126,6 +127,7 @@
   <ItemGroup>
     <QtUic Include="res\cron.ui" />
     <QtUic Include="res\ip.ui" />
+    <QtUic Include="res\json.ui" />
     <QtUic Include="res\thytools.ui" />
     <QtUic Include="res\timer.ui" />
   </ItemGroup>
@@ -135,11 +137,13 @@
     <QtMoc Include="configmanager.h" />
     <ClInclude Include="src\croncpp.h" />
     <QtMoc Include="src\ip.h" />
+    <QtMoc Include="src\json.h" />
     <ClInclude Include="src\resource.h" />
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="res\cron.qrc" />
     <QtRcc Include="res\ip.qrc" />
+    <QtRcc Include="res\json.qrc" />
     <QtRcc Include="res\thytools.qrc" />
     <QtRcc Include="res\timer.qrc" />
   </ItemGroup>

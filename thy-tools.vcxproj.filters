@@ -49,6 +49,9 @@
     <ClCompile Include="configmanager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\json.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="src\thytools.h">
@@ -66,6 +69,9 @@
     <QtMoc Include="configmanager.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="src\json.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="res\thytools.ui">
@@ -78,6 +84,9 @@
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="res\ip.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="res\json.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>
@@ -100,6 +109,9 @@
       <Filter>Resource Files</Filter>
     </QtRcc>
     <QtRcc Include="res\ip.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+    <QtRcc Include="res\json.qrc">
       <Filter>Resource Files</Filter>
     </QtRcc>
   </ItemGroup>

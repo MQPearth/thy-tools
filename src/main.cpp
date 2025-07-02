@@ -9,6 +9,7 @@
 
 #include "cron.h"
 #include "ip.h"
+#include "json.h"
 #include "configmanager.h"
 
 int main(int argc, char* argv[]) {
@@ -28,6 +29,7 @@ int main(int argc, char* argv[]) {
 
 	QAction* cronAction = new QAction("Cron");
 	QAction* ipAction = new QAction("IP");
+	QAction* jsonAction = new QAction("JSON");
 	QAction* timerAction = new QAction("定时");
 	QAction* settingsAction = new QAction("设置");
 	QAction* exitAction = new QAction("退出");
@@ -35,6 +37,7 @@ int main(int argc, char* argv[]) {
 
 	menu->addAction(cronAction);
 	menu->addAction(ipAction);
+	menu->addAction(jsonAction);
 	menu->addAction(timerAction);
 	menu->addSeparator();
 	menu->addAction(settingsAction);
@@ -75,6 +78,16 @@ int main(int argc, char* argv[]) {
 			ip = std::make_unique<ip_tool>();
 		}
 		ip->showWindow();
+		});
+
+
+	std::unique_ptr<json_tool> json;
+
+	QObject::connect(jsonAction, &QAction::triggered, [&json]() {
+		if (!json) {
+			json = std::make_unique<json_tool>();
+		}
+		json->showWindow();
 		});
 
 	QObject::connect(exitAction, &QAction::triggered, [&]() {
