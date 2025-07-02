@@ -8,6 +8,7 @@
 #include <QJsonObject>
 #include <QUrl>
 #include <QDebug>
+#include <QClipboard>
 #include "configmanager.h"
 
 ip_tool::ip_tool(QWidget* parent)
@@ -37,6 +38,10 @@ void ip_tool::handleUpdateSignal(const QString code, const QJsonObject value) {
 
 	if (code == "200" && status == "success") {
 		QString ip = value.value("query").toString();
+
+		QClipboard* clipboard = QApplication::clipboard();
+		clipboard->setText(ip);
+
 		QString continent = value.value("continent").toString();
 		QString country = value.value("country").toString();
 		QString isp = value.value("isp").toString();
