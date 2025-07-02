@@ -14,3 +14,8 @@ Cron
 IP查询
 
 ![cron](doc/ip.png)
+
+JSON格式化
+
+![cron](doc/json.png)
+
