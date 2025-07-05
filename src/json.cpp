@@ -3,6 +3,7 @@
 #include <QLineEdit>
 #include <QJsonParseError>
 #include <QJsonDocument>
+#include "plainpastetextedit.h"
 
 json_tool::json_tool(QWidget* parent)
     : QMainWindow(parent)

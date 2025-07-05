@@ -138,6 +138,7 @@
     <ClInclude Include="src\croncpp.h" />
     <QtMoc Include="src\ip.h" />
     <QtMoc Include="src\json.h" />
+    <QtMoc Include="src\plainpastetextedit.h" />
     <ClInclude Include="src\resource.h" />
   </ItemGroup>
   <ItemGroup>

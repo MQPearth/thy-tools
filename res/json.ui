@@ -19,27 +19,30 @@
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
-     <widget class="QTextEdit" name="sourceEdit">
-      <property name="font">
-       <font>
-        <pointsize>11</pointsize>
-       </font>
+     <widget class="QSplitter" name="splitter">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
       </property>
-      <property name="placeholderText">
-       <string>粘贴到此处</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="1">
-     <widget class="QTextEdit" name="targetEdit">
-      <property name="font">
-       <font>
-        <pointsize>11</pointsize>
-       </font>
-      </property>
-      <property name="readOnly">
-       <bool>true</bool>
-      </property>
+      <widget class="PlainPasteTextEdit" name="sourceEdit">
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="placeholderText">
+        <string>粘贴到此处</string>
+       </property>
+      </widget>
+      <widget class="QTextEdit" name="targetEdit">
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
      </widget>
     </item>
    </layout>
@@ -49,5 +52,14 @@
  <resources>
   <include location="json.qrc"/>
  </resources>
+ 
+ <customwidgets>
+ <customwidget>
+  <class>PlainPasteTextEdit</class>
+  <extends>QTextEdit</extends>
+  <header>plainpastetextedit.h</header>
+ </customwidget>
+</customwidgets>
+
  <connections/>
 </ui>

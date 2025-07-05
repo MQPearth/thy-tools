@@ -72,6 +72,9 @@
     <QtMoc Include="src\json.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="src\plainpastetextedit.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="res\thytools.ui">
